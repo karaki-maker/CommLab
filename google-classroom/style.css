@@ -1,9 +1,65 @@
 body {
-    background-color: white;
+    background-color: #F9FAFD;
 }
 
-#CommLab {
-   height: 64;
-   width: 914x; 
-   background-color: #F9FAFD;   
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+.navigationbar {
+    display: flex;
+}
+
+.classroomdiv {
+    font-size: 24px; 
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray; 
+    margin-top: 8px;
+    margin-left: 1px; 
+}
+
+.navcaret {
+    margin-top: 7px; 
+    margin-left: 8px;
+}
+
+.specificclass {
+    font-size: 18px; 
+    font-family: Arial, Helvetica, sans-serif; 
+    color: gray; 
+    margin-top: 5px; 
+    margin-left: 8px; 
+}
+
+.navgrid {
+    margin-left: 890px; 
+    margin-top: 8px; 
+}
+
+.navprofile {
+    margin-top: 8px; 
+    margin-left: 1px; 
+}
+
+.right-edge-box {
+    position: fixed; 
+    right: 0; 
+    bottom: 0; 
+    width: 86%; 
+    height: 74%; 
+    background-color: white; 
+    color: white; 
+    padding: 70px; 
+    border-radius: 30px 0 0 0; 
+}
+
+.navsidebar {
+    margin-top: 15px; 
+    margin-left: 4px; 
 }
