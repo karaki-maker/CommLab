@@ -1,0 +1,31 @@
+body {
+    background-color: black;"
+}
+pre {
+    color: white; 
+    font-size: 16px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-weight: bold; 
+}
+
+div {
+    background-color: aquamarine;
+    margin-left: 40px; 
+    margin-right: 5px; 
+    padding: 10px; 
+    border-color: red; 
+    border-width: 1px; 
+    border-style: solid; 
+             OR CAN USE
+    border: black 1px dashed; 
+
+}
+
+#specialdiv{
+    background-color: blueviolet; 
+    height: 50px; 
+    width: 50px; 
+    padding: 10px; 
+    border: yellowgreen 10px dotted; 
+    margin-bottom: 200px; 
+}

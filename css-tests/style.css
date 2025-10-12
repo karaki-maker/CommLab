@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(170, 201, 123);
+}
+
+p{ 
+   background-color: pink 
+}
+
+.box{
+    background-color: deepskyblue;
+    padding: 10px; 
+    margin-bottom: 5px; 
+}
+
+#three{
+    padding: 20px; 
+    margin-top: 40px 
+}
+
+#two{
+    border: 2px red dashed; 
+}
+
+#three p{
+    background-color: lightcyan; 
+}
+
+#second p{
+    display: inline; 
+}
+
+.column{
+    width: 100px; 
+    height: 50px; 
+    display: inline-block; 
+}
+
+#five{
+    background-color: red; 
+
+}
+
