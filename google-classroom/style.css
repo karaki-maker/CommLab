@@ -29,12 +29,24 @@ a:hover {
     margin-left: 8px;
 }
 
-.specificclass {
+.specific-class {
     font-size: 18px; 
     font-family: Arial, Helvetica, sans-serif; 
     color: gray; 
     margin-top: 5px; 
     margin-left: 8px; 
+    width: 300px;
+
+}
+.specific-class:hover a{
+    color: blue;
+    text-decoration: underline;
+    
+}
+
+.specific-class-leon {
+    font-size: 12px; 
+    color: #444746; 
 }
 
 .navgrid {
@@ -52,7 +64,7 @@ a:hover {
     right: 0; 
     bottom: 0; 
     width: 86%; 
-    height: 75%; 
+    height: 73%; 
     background-color: white; 
     color: white; 
     padding: 70px; 
@@ -62,4 +74,8 @@ a:hover {
 .navsidebar {
     margin-top: 15px; 
     margin-left: 4px; 
+}
+
+.left-grid {
+    
 }
