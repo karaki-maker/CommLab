@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Classroom – Stream</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:FILL@0..1,GRAD@-50..200,opsz@24..48,wght@400..700" rel="stylesheet"/>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <aside class="nav-rail" aria-label="Navigation">
+    <button class="rail-btn" aria-label="Menu"><span class="material-symbols-rounded"></span></button>
+    <a class="rail-btn rail-active" href="#" aria-label="Classes"><span class="material-symbols-rounded"></span></a>
+    <a class="rail-btn" href="#" aria-label="Calendar"><span class="material-symbols-rounded"></span></a>
+    <a class="rail-btn" href="#" aria-label="To-do"><span class="material-symbols-rounded"></span></a>
+    <a class="rail-btn" href="#" aria-label="Teaching"><span class="material-symbols-rounded"></span></a>
+    <a class="rail-btn" href="#" aria-label="Graded"><span class="material-symbols-rounded"></span></a>
+    <a class="rail-btn" href="#" aria-label="Settings"><span class="material-symbols-rounded"></span></a>
+  </aside>
+
+  <header class="topbar" role="banner">
+    <div class="crumbs">
+      <img class="g-logo" alt="" src="">
+      <a href="error404.html" class="classroom">Classroom</a>
+      <span class="chev">›</span>
+      <a href="error404.html" class="classname">Communications Lab Web F25</a>
+    </div>
+
+    <div class="topbar-right">
+      <button class="top-btn" aria-label="Google apps"><span class="material-symbols-rounded">apps</span></button>
+      <div class="avatar" title="K"></div>
+    </div>
+  </header>
+  <nav class="tabs" aria-label="Class tabs">
+    <a class="tab active" href="#">Stream</a>
+    <a class="tab" href="#">Classwork</a>
+    <a class="tab" href="#">People</a>
+  </nav>
+
+  <main class="page">
+    <section class="banner-card" aria-label="Class banner">
+      <div class="banner-art" aria-hidden="true"></div>
+      <div class="banner-title">
+        <h1>Communications Lab Web F25</h1>
+        <div class="teacher">Leon</div>
+      </div>
+    </section>
+    <div class="content-grid">
+
+      <aside class="card upcoming">
+        <div class="card-title">Upcoming</div>
+        <div class="due-line">
+          <div class="muted">Due Monday</div>
+          <div class="muted">4:00 PM – Project 1: <span class="nowrap">Shanzhai Web</span></div>
+        </div>
+        <a class="view-all" href="#">View all</a>
+      </aside>
+
+      <section class="right-col">
+        <article class="card composer">
+          <div class="avatar small" aria-hidden="true">K</div>
+          <input type="text" placeholder="Announce something to your class" aria-label="Announce something" disabled>
+        </article>
+        <article class="card stream-item">
+          <div class="item-icon"><span class="material-symbols-rounded"></span></div>
+          <div class="item-main">
+            <div class="item-title"><strong>Leon Eckert</strong> posted a new assignment: <span class="nowrap">Project 1: Shanzhai Web</span></div>
+            <div class="item-date">Oct 19</div>
+          </div>
+          <button class="kebab" aria-label="More"><span class="material-symbols-rounded"></span></button>
+        </article>
+
+        <article class="card stream-item">
+          <div class="item-icon"><span class="material-symbols-rounded"></span></div>
+          <div class="item-main">
+            <div class="item-title"><strong>Leon Eckert</strong> posted a new assignment: <span class="nowrap">5.R Anatomy of a Website</span></div>
+            <div class="item-date">Oct 12</div>
+          </div>
+          <button class="kebab" aria-label="More"><span class="material-symbols-rounded"></span></button>
+        </article>
+
+        <article class="card stream-item">
+          <div class="item-icon"><span class="material-symbols-rounded"></span></div>
+          <div class="item-main">
+            <div class="item-title"><strong>Leon Eckert</strong> posted a new assignment: <span class="nowrap">🍩 Tutorial Website</span></div>
+            <div class="item-date">Sep 25</div>
+          </div>
+          <button class="kebab" aria-label="More"><span class="material-symbols-rounded"></span></button>
+        
+        
+    
+
+      </section>
+    </div>
+  </main>
+</body>
+</html>

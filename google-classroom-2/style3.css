@@ -1,0 +1,52 @@
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Roboto", system-ui, -apple-system, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f7fb;
+  color: #333;
+}
+
+.error-box {
+  text-align: center;
+  background: #fff;
+  padding: 60px 40px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+}
+
+.face {
+  font-size: 80px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 72px;
+  margin: 0;
+  color: #444;
+}
+
+.msg {
+  color: #666;
+  margin: 8px 0 28px;
+  font-size: 16px;
+}
+
+.btn {
+  display: inline-block;
+  background: #1a73e8;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #155ab6;
+}
