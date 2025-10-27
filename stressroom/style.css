@@ -1,14 +1,15 @@
 
-/* Reset & tokens */
+/* CLASSROOM */
+
 :root{
-  --bg:#fff;           /* page background */
-  --surface:#fff;         /* cards and bars */
+  --bg:#FFF;        
+  --surface:#FFF;        
   --border:#e6e8ee;
   --text:#1f1f1f;
   --muted:#5f6368;
-  --brand:#1a73e8;        /* Google blue (for focus/links) */
-  --accent:#8e004d;       /* magenta banner color */
-  --green:#188038;        /* assignment icon green */
+  --brand:#1a73e8;      
+  --accent:#8e004d;   
+  --green:#188038;      
   --radius:12px;
   --shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08);
 }
@@ -22,12 +23,11 @@ body{
   line-height:1.45;
 }
 
-/* Left rail */
 .nav-rail{
   position:fixed; 
   inset:0 auto 0 0; 
   width:70px;
-  background:#fff; 
+  background:#F9FAFD; 
   border-right:1px solid var(--border);
   display:flex; 
   flex-direction:column; 
@@ -48,10 +48,10 @@ body{
   color:var(--muted);
 }
 .rail-btn:hover,.rail-active{background:#eef3fe;color:var(--brand)}
-/* space to the right of rail */
+
 body{padding-left:70px}
 
-/* Top bar */
+
 .topbar{
   position:sticky; 
   top:0; 
@@ -61,7 +61,7 @@ body{padding-left:70px}
   align-items:center; 
   justify-content:space-between;
   padding:0 16px; 
-  background:var(--surface); 
+  background: #F9FAFD; 
   border-bottom:1px solid var(--border);
 }
 .g-logo{width:24px;height:24px}
@@ -74,16 +74,16 @@ body{padding-left:70px}
 .chev{color:var(--muted)}
 .topbar-right{display:flex; align-items:center; gap:6px}
 .top-btn{border:none;background:transparent;border-radius:12px;padding:8px;cursor:pointer;color:var(--muted)}
-.top-btn:hover{background:#eef3fe;color:var(--brand)}
+.top-btn:hover{background:#e0e3e7;color:var(--brand)}
 .avatar{
-  width:32px;height:32px;border-radius:50%; background:#e0e3e7; color:#3c4043;
+  width:32px;height:32px;border-radius:50%; background:#FFF; color:#3c4043;
   display:grid;place-items:center;font-weight:700;
 }
 
-/* Tabs */
+
 .tabs{
   position:sticky; top:64px; z-index:40;
-  display:flex; gap:16px; padding:0 24px; background:var(--surface);
+  display:flex; gap:16px; padding:0 24px; background: #FFF;
   border-bottom:1px solid var(--border); height:56px; align-items:flex-end;
 }
 .tab{
@@ -92,10 +92,17 @@ body{padding-left:70px}
 }
 .tab.active{color:#1a73e8; border-color:#1a73e8}
 
-/* Page container */
+
 .page{max-width:1120px;margin:16px auto;padding:0 24px}
 
-/* Banner */
+
+
+.banner {
+  width: 1070px;
+  height: 300px;
+  object-position: center;
+
+}
 .banner-card{
   position:relative; overflow:hidden; background:var(--surface);
   border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow);
@@ -104,7 +111,7 @@ body{padding-left:70px}
 .banner-art{
   position:absolute; inset:0;
   background:linear-gradient(135deg, #a10061, var(--accent));
-  /* subtle graphic stripes */
+  
   --s:300px; background-image:
     repeating-linear-gradient(25deg, rgba(255,255,255,.1) 0 12px, transparent 12px 48px);
   filter:saturate(105%);
@@ -115,7 +122,7 @@ body{padding-left:70px}
 .banner-title h1{margin:0 0 6px 0; font-size:28px; font-weight:700}
 .banner-title .teacher{opacity:.9}
 
-/* Grid under banner */
+
 .content-grid{
   margin-top:16px;
   display:grid; grid-template-columns: minmax(240px, 300px) minmax(0,1fr);
@@ -125,25 +132,31 @@ body{padding-left:70px}
   .content-grid{grid-template-columns: 1fr}
 }
 
-/* Cards */
+
 .card{
   background:var(--surface); border:1px solid var(--border);
   border-radius:var(--radius); box-shadow:var(--shadow);
 }
 .card + .card{margin-top:12px}
 
-/* Upcoming */
-.upcoming{padding:16px}
-.card-title{font-weight:700; margin-bottom:8px}
+
+.upcoming {
+  padding:16px
+}
+.card-title{
+  font-weight:700; margin-bottom:8px}
 .due-line{font-size:14px}
 .muted{color:var(--muted)}
-.view-all{display:inline-block;margin-top:12px; color:#1a73e8; text-decoration:none; font-weight:600}
+.view-all{display:inline-block;margin-top:12px; 
+  color:#1a73e8; 
+  text-decoration:none; 
+  font-weight:600}
 .nowrap{white-space:nowrap}
 
-/* Right column */
+
 .right-col{display:flex; flex-direction:column}
 
-/* Composer */
+
 .composer{
   display:flex; align-items:center; gap:12px; padding:10px 14px;
 }
@@ -154,7 +167,7 @@ body{padding-left:70px}
 }
 .composer input::placeholder{color:#7a7f86}
 
-/* Stream items */
+
 .stream-item{display:grid; grid-template-columns: 44px 1fr auto; align-items:center; padding:12px 14px}
 .item-icon{
   width:36px;height:36px;border-radius:18px; display:grid; place-items:center; color:#fff;

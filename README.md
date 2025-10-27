@@ -1,6 +1,7 @@
 # Katerina's CommLab Page 
 
 Sit back and relax!
+
 ![banner](catbanner.jpeg)
 
 TAKE A LOOK AT MY PROJECTS BELOW :)  
@@ -13,7 +14,7 @@ A quiet journey through different biomes made using Google Sheets! Take time to 
 
 * [Life Story as Scroll](https://karaki-maker.github.io/CommLab/cat-island)
 
-A diary about my experience at Shanghai's Cat Island! Please be kind on this one. It was my first ever so it was extremely simple and purely made to document cute kitties and give the sanctuary some love. (Please go visit Cat Island!)
+A diary about my experience at Shanghai's Cat Island! Please be kind. It was my first website ever so it was extremely simple and purely made to document cute kitties and show the sanctuary some love. (But please go visit Cat Island!)
 
 ![cats](ASCII-cat.png)
 
