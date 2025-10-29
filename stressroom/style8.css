@@ -1,4 +1,5 @@
-/* Clean Your Room */
+/* CLEAN YOUR ROOM */
+
 :root{
   --bg:#0f0f10;
   --surface:#151518;
@@ -12,12 +13,20 @@
   --ok-ink:#0b1b10;
 }
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+}
+
 body{
   background:var(--bg);
   color:var(--ink);
-  font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
 
 .page{
@@ -26,14 +35,28 @@ body{
   padding:0 16px;
 }
 
-h1{margin:0 0 8px; font-size:28px; font-weight:800; letter-spacing:.2px}
-.level-title{margin:8px 0 12px; font-size:20px; color:#e7e9ed}
-.hint{margin:8px 0 16px; color:var(--muted)}
+h1{
+  margin:0 0 8px;
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+.level-title{
+  margin:8px 0 12px;
+  font-size:20px;
+  color:#e7e9ed;
+}
+
+.hint{
+  margin:8px 0 16px;
+  color:var(--muted);
+}
 
 .grid{
   display:grid;
   gap:14px;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
 }
 
 .card{
@@ -44,32 +67,59 @@ h1{margin:0 0 8px; font-size:28px; font-weight:800; letter-spacing:.2px}
   border-radius:14px;
   padding:14px;
   text-decoration:none;
-  transition:transform .06s ease, box-shadow .06s ease, outline-color .06s ease;
   outline:2px solid transparent;
 }
-.card:hover{transform:translateY(-1px); box-shadow:0 6px 14px rgba(0,0,0,.22); outline-color:#333}
-.card .big{font-size:42px; line-height:1; display:block; margin-bottom:10px}
 
-.card.bad{background:#ffe6ed; color:#201116; border-color:var(--danger)}
+.card:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 14px rgba(0,0,0,.22);
+  outline-color:#333;
+}
+
+.card .big{
+  display:block;
+  margin-bottom:10px;
+  font-size:42px;
+  line-height:1;
+}
+
+.card.bad{
+  background:#ffe6ed;
+  color:#201116;
+  border-color:var(--danger);
+}
 
 .button{
   display:inline-block;
   padding:12px 16px;
   border:2px solid var(--accent);
-  background:green;
+  background:var(--accent);
   color:var(--ink);
   border-radius:10px;
   text-decoration:none;
   font-weight:700;
 }
-.button:hover{background:#102a1d}
-.button.danger{border-color:var(--danger); background:var(--danger-bg); color:#ffd7e5}
-.button:focus{outline:3px solid #3b6; outline-offset:2px}
+
+.button:hover{
+  background:#102a1d;
+}
+
+.button.danger{
+  border-color:var(--danger);
+  background:var(--danger-bg);
+  color:#ffd7e5;
+}
+
+.button:focus{
+  outline:3px solid #3b6;
+  outline-offset:2px;
+}
 
 .bottom-textbox{
   position:fixed;
   bottom:15px;
-  left:0; right:0;
+  left:0;
+  right:0;
   margin:auto;
   width:60%;
   max-width:500px;
@@ -84,14 +134,30 @@ h1{margin:0 0 8px; font-size:28px; font-weight:800; letter-spacing:.2px}
   z-index:9;
 }
 
+.status{
+  margin:8px 0 20px;
+  color:var(--muted);
+}
+
+.center{
+  text-align:center;
+}
+
 @media (max-width:700px){
-  .page{margin-bottom:110px}
-  .bottom-textbox{width:80%; padding:12px 16px; font-size:14px}
+  .page{
+    margin-bottom:110px;
+  }
+  .bottom-textbox{
+    width:80%;
+    padding:12px 16px;
+    font-size:14px;
+  }
 }
 
 @media (max-width:420px){
-  .bottom-textbox{width:90%; padding:10px 12px; font-size:13px}
+  .bottom-textbox{
+    width:90%;
+    padding:10px 12px;
+    font-size:13px;
+  }
 }
-
-.status{margin:8px 0 20px; color:var(--muted)}
-.center{text-align:center}
