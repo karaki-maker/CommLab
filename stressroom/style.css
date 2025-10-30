@@ -49,8 +49,9 @@ body{
 }
 .rail-btn:hover,.rail-active{background:#eef3fe;color:var(--brand)}
 
-body{padding-left:70px}
-
+body{
+  padding-left:70px
+}
 
 .topbar{
   position:sticky; 
@@ -64,14 +65,30 @@ body{padding-left:70px}
   background: #F9FAFD; 
   border-bottom:1px solid var(--border);
 }
-.g-logo{width:24px;height:24px}
-.crumbs{display:flex; 
-    align-items:center; 
-    gap:10px; 
-    font-weight:500}
-.crumb{color:#3c4043}
-.crumb.current{font-weight:600}
-.chev{color:var(--muted)}
+
+.g-logo{
+  width:24px;
+  height:24px
+}
+
+.crumbs{
+  display:flex; 
+  align-items:center; 
+  gap:10px; 
+  font-weight:500
+}
+
+.crumb{
+  color:#3c4043
+}
+
+.crumb.current{
+  font-weight:600
+}
+
+.chev{
+  color:var(--muted)
+}
 .topbar-right{display:flex; align-items:center; gap:6px}
 .top-btn{border:none;background:transparent;border-radius:12px;padding:8px;cursor:pointer;color:var(--muted)}
 .top-btn:hover{background:#e0e3e7;color:var(--brand)}
