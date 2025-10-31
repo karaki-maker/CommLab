@@ -10,11 +10,14 @@ body {
     align-items: center; 
     height: 100%; 
     margin-top: 110px;
+    overflow: hidden;
+    position: relative;
 }
 
 .box{
     width: 700px; 
-    height: 600px; 
+    height: 600px;
+    overflow: hidden;
     background-color: #a9d851;
     background: repeating-conic-gradient(
         #a9d851 0% 25%, 
@@ -26,7 +29,8 @@ body {
 .top-border{
     background-color: #49752d;
     color: #49752d;
-    position: fixed; 
+    position: fixed;
+    overflow: hidden; 
     top: 0; 
     left: 0; 
     width: 100%; 
@@ -84,8 +88,121 @@ button:hover{
 
 }
 
-.snake{
-    font-weight: bold; 
+.lorem{
+    color: blue; 
+    position: relative; 
+    font-weight: bolder; 
+
+}
+
+.lorem-2{
+    color: blue; 
+    position: relative;  
+    transform: rotate(0.25turn);
+    font-weight: bolder;
+
+}
+
+.lorem-3{
+    color: blue; 
+    position: relative;  
+    font-weight: bolder;
+    left: 1px;  
+
+}
+
+.lorem-4{
     color: blue;
-    font-size: 16px; 
+    position: relative; 
+    top: 30px; 
+    font-weight: bolder; 
+}
+
+.lorem-5{
+    color: blue; 
+    position: relative; 
+    top: 65px; 
+    font-weight: bolder; 
+}
+
+.lorem-6{
+    color: blue; 
+    position: relative; 
+    top: 105px; 
+    font-weight: bolder; 
+}
+
+.lorem-7{
+    color: blue; 
+    position: relative; 
+    top: 150px; 
+    font-weight: bolder; 
+}
+
+.lorem-8{
+    color: blue;
+    position: relative; 
+    top: 185px; 
+    font-weight: bolder; 
+
+}
+
+@keyframes slither{
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%); 
+    }
+}
+
+.lorem{
+    animation: slither 10s ease-in infinite; 
+}
+
+.lorem-2{
+   animation: slither-up 10s ease-in infinite; 
+} 
+
+.lorem-4{
+    animation: slither 10s ease-in infinite; 
+}
+
+.lorem-6{
+    animation: slither 10s ease-in infinite; 
+}
+
+.lorem-8{
+    animation: slither 10s ease-in infinite; 
+}
+
+@keyframes slither-down{
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(20px);
+    }
+}
+    
+@keyframes slither-left{
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%); 
+    }
+
+}
+
+.lorem-3{
+    animation: slither-left 10s ease-in infinite; 
+}
+
+.lorem-5{
+    animation: slither-left 10s ease-in infinite; 
+}
+
+.lorem-7{
+    animation: slither-left 10s ease-in infinite; 
 }
