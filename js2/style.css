@@ -1,0 +1,23 @@
+button{
+    background-color: red; 
+    color: white; 
+    font-weight: bold;
+    border-radius: 5px;
+
+}
+
+body { 
+    background-color: black; 
+    color: white; 
+}
+
+#container{
+    width: 400px; 
+    height: 500px; 
+    background-color: grey;  
+    transition: transform 2s ease-out; 
+}
+
+.move{
+    transform: translate(100px, 0px); 
+}
