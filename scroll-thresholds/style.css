@@ -1,0 +1,48 @@
+body{
+    margin:0;
+}
+
+
+.windowHeight{
+    height: 100vh; /* "viewport height" aka as large as the window */
+    width: 100%;
+    background-color: bisque;
+    outline: 2px black dashed;
+}
+
+.one{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.one p{
+    width: 33%;
+    transition: transform .5s ease-out;
+}
+
+
+
+.two{
+    background-color: rgb(119, 2, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.two p{
+    width: 33%;
+    transform: scale(3);
+    opacity: 0;
+    transition: all .5s ease-out;
+
+}
+
+#cat{
+    position: fixed; 
+    left: 5px; 
+    top: 5px; 
+    transform: rotate(40deg);
+}
