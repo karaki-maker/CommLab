@@ -1,0 +1,12 @@
+body{
+    background-color: lightblue; 
+}
+
+#myButton{
+    background-color: white; 
+    border-radius: 4px;
+    width: 200px; 
+    height: 50px;
+    font-size: 20px; 
+    font-weight: bolder; 
+}

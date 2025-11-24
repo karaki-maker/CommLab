@@ -1,0 +1,10 @@
+.box{
+    width: 50px; 
+    height: 50px; 
+    border: 1px black solid; 
+    transition: all 2s linear; 
+}
+
+.circle{
+    border-radius: 25px; 
+}
