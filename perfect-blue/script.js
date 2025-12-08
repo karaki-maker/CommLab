@@ -121,14 +121,14 @@ const emailData = {
     from: 'chamlover2@fans.jp',
     subject: "Please don't leave Mima!",
     body:
-      "Hi Mima-rin,\n\nPlease don't leave Cham! You are my favorite and have always been.\n" +
+      "Hi Mimarin,\n\nPlease don't leave Cham! You are my favorite and have always been.\n" +
       "Your fans need you!\n\n- chamlover2"
   },
   m2: {
     from: 'chamforev3r@fans.jp',
     subject: "I love you Mima",
     body:
-      "Dear Mima-rin,\n\nI love you so much Mima!\n" +
+      "Dear Mimarin,\n\nI love you so much Mima!\n" +
       "I am always looking at Mima's Room..\n\n- chamforev3r"
   },
   m3: {
@@ -150,7 +150,7 @@ const emailData = {
     from: 'me-mania@fanmail.jp',
     subject: "That girl on TV isn't you, right?",
     body:
-      "Mima-rin,\n\nI watched \"Double Bind\" tonight. That girl they say is you...\n" +
+      "Mimarin,\n\nI watched \"Double Bind\" tonight. That girl they say is you...\n" +
       "She did such terrible things. That can't be you.\n\n" +
       "That wasn’t you on the TV, right…? That’s an imposter.\n\n" +
       "Please tell me I'm right.\n\n- Me-Mania"
@@ -160,7 +160,7 @@ const emailData = {
     from: 'me-mania@fanmail.jp',
     subject: "I'll take care of it.",
     body:
-      "Mima-rin,\n\nThank you for telling me the truth.\n" +
+      "Mimarin,\n\nThank you for telling me the truth.\n" +
       "I knew it. That one on TV is an imposter.\n\n" +
       "Don't worry. I'll take care of it.\n\n- Me-Mania"
   },
@@ -169,8 +169,8 @@ const emailData = {
     from: 'me-mania@fanmail.jp',
     subject: "I'll keep your image pure",
     body:
-      "Mima-rin,\n\nI saw the photoshoot. Those pictures weren't really you.\n" +
-      "I'll keep your image pure, Mima-rin.\n" +
+      "Mimarin,\n\nI saw the photoshoot. Those pictures weren't really you.\n" +
+      "I'll keep your image pure, Mimarin.\n" +
       "You won't have to do things like that anymore.\n\n- Me-Mania"
   },
   // final email from "mimakirigoe"
@@ -225,7 +225,7 @@ function displayEmail(id) {
     replySection.classList.remove('hidden');
     replyToLabel.textContent = emailData[id].from;
     replyText.readOnly = true;
-    replyText.value = "I AM MIMA-RIN. I AM AN IDOL. I AM THE REAL MIMA.";
+    replyText.value = "I AM MIMA. I AM AN IDOL. I AM THE REAL MIMA.";
   }
 
   // When reading m7, later we trigger photographer murder news
