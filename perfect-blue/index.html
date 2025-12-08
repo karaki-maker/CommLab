@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mima's Room - Diary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <!-- MAIN PAGE CONTENT -->
+  <div id="page-wrapper">
+    <div class="main-inner">
+      <!-- DIARY COLUMN ONLY (CENTERED) -->
+      <main class="diary">
+        <h2 id="diary-top" class="diary-title">Mima's Room</h2>
+
+        <!-- Entry 1 -->
+        <section class="entry" id="about">
+          <h2>Entry 1</h2>
+          <p>
+            Hi everyone! I am Mima-rin and this is my blog. I am 21 years old.
+            I am a pop idol with my members Yukiko and Rei called Cham! It’s nice
+            to meet you all and I hope you support us!
+          </p>
+
+          <div class="polaroid-row">
+            <div class="polaroid">
+              <img src="images/mima_cham_03.jpg" alt="Mima performing on stage">
+              <div class="polaroid-caption">Our live show!</div>
+            </div>
+            <div class="polaroid">
+              <img src="images/yukiko-rei.jpg" alt="Yukiko, Rei and Mima performing">
+              <div class="polaroid-caption">I love Cham!</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Entry 2 -->
+        <section class="entry">
+          <h2>Entry 2</h2>
+          <p>
+            Thank you everyone in the company who works hard! Thank you Manager Rumi and
+            CEO Tadokoro!
+          </p>
+
+          <div class="polaroid-row">
+            <div class="polaroid">
+              <img src="images/rumi.jpg" alt="Rumi">
+              <div class="polaroid-caption">Lovely Manager Rumi</div>
+            </div>
+            <div class="polaroid">
+              <img src="images/tadokoro.jpg" alt="Tadokoro">
+              <div class="polaroid-caption">Our hardworking CEO Tadokoro</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Entry 3 -->
+        <section class="entry">
+          <h2>Entry 3</h2>
+          <p>I love my little fishies!</p>
+
+          <div class="polaroid-row">
+            <div class="polaroid">
+              <img src="images/fishies.png" alt="Mima's fish">
+              <div class="polaroid-caption">My precious fish</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Entry 4 -->
+        <section class="entry">
+          <h2 id="live">Entry 4</h2>
+          <p>I love all of my fans!</p>
+
+          <div class="polaroid-row">
+            <div class="polaroid">
+              <img src="images/fans.jpg" alt="Fans cheering">
+              <div class="polaroid-caption">Everyone supporting me</div>
+            </div>
+            <div class="polaroid">
+              <img src="images/stalker.jpg" alt="Mysterious fan">
+              <div class="polaroid-caption">A very devoted fan...</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Entry 5 -->
+        <section class="entry">
+          <h2>Entry 5</h2>
+          <p class="shake-text">
+            I love being a pop idol!
+          </p>
+
+          <div class="polaroid-row">
+            <div class="polaroid">
+              <img src="images/stalking.jpg" alt="Fake 1">
+              <div class="polaroid-caption">₩ⱧØ ₳ⱤɆ ɎØɄ</div>
+            </div>
+            <div class="polaroid">
+              <img src="images/fake.jpg" alt="Fake 2">
+              <div class="polaroid-caption">₩ⱧØ ₳₥ ł</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Entry 6 -->
+        <section class="entry" id="entry-6">
+          <h2>Entry 6</h2>
+          <p class="shake-text">
+            I am Mima Kirigoe and I am an idol!
+          </p>
+
+          <div class="polaroid-row">
+            <div class="polaroid">
+              <img src="images/perfectblue.jpg" alt="Perfect Blue">
+              <div class="polaroid-caption">I AM AN IDOL</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Background music (Angel of Love) -->
+    <audio id="bgm" src="audio/angel-of-love.mp3" loop></audio>
+  </div>
+
+  <!-- POPUP LAYER FOR "I AM MIMA" WINDOWS -->
+  <div id="popup-layer"></div>
+
+  <!-- LOGIN OVERLAY (initially hidden, shown after meltdown) -->
+  <div id="login-overlay" class="login-overlay hidden">
+    <div class="login-window">
+      <div class="login-title-bar">Login</div>
+      <div class="login-body">
+        <div class="login-row">
+          <label for="login-username">Username:</label>
+          <input id="login-username" type="text" value="**m*" readonly>
+        </div>
+        <div class="login-row">
+          <label for="login-password">Password:</label>
+          <input id="login-password" type="password" value="****" readonly>
+        </div>
+        <div class="login-row">
+          Administrator: <a href="#" onclick="return false;">?</a>
+        </div>
+      </div>
+      <div class="login-footer">
+        <button id="login-btn">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js" defer></script>
+</body>
+</html>
+
+
+

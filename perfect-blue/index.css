@@ -1,0 +1,237 @@
+/* ====== BASIC RESET ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  background-color: #7b1316; /* side-bars color */
+  color: #4a1212;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ====== MAIN FRAME (pink checkered background) ====== */
+#page-wrapper {
+  max-width: 1100px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 32px 48px 80px;
+  position: relative;
+  overflow: hidden;
+
+  background-color: #fbeee6;
+  background-image:
+    linear-gradient(#f3c1c5 2px, transparent 2px),
+    linear-gradient(90deg, #f3c1c5 2px, transparent 2px),
+    linear-gradient(#f3c1c5 2px, transparent 2px),
+    linear-gradient(90deg, #f3c1c5 2px, transparent 2px);
+  background-size: 32px 32px;
+  background-position: 0 0, 0 0, 16px 16px, 16px 16px;
+}
+
+/* when meltdown starts, slightly tint background */
+#page-wrapper.meltdown {
+  animation: tintScreen 0.6s steps(2, end) infinite alternate;
+}
+
+@keyframes tintScreen {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(-20deg) contrast(1.2); }
+}
+
+/* ====== LAYOUT: CENTER THE DIARY COLUMN ====== */
+.main-inner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.diary {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ====== DIARY TITLE ====== */
+.diary-title {
+  font-size: 56px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+/* ====== DIARY ENTRIES ====== */
+.entry {
+  margin-bottom: 200px; /* BIG SPACE BETWEEN ENTRIES */
+  line-height: 1.6;
+}
+
+.entry h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.entry p {
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+
+/* ====== POLAROID IMAGES ====== */
+.polaroid-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.polaroid {
+  background: #ffffff;
+  padding: 8px 8px 18px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  max-width: 45%;
+  transform: rotate(-3deg);
+}
+
+.polaroid:nth-child(2n) {
+  transform: rotate(3deg);
+}
+
+.polaroid-caption {
+  margin-top: 6px;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* ====== SHAKING TEXT ====== */
+.shake-text {
+  display: inline-block;
+  animation: textShake 0.05s infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes textShake {
+  0%   { transform: translateX(-1px) rotate(-0.4deg); }
+  100% { transform: translateX(1px) rotate(0.4deg); }
+}
+
+/* ====== POPUP LAYER ====== */
+#popup-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 500;
+}
+
+.popup-window {
+  position: absolute;
+  width: 230px;
+  background: #dcdcdc;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.6);
+  font-family: "MS Sans Serif", "Tahoma", system-ui;
+  font-size: 13px;
+  padding: 4px 6px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.popup-window p {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 4px;
+  letter-spacing: 0.1em;
+}
+
+.popup-window img {
+  border: 2px solid #ffffff;
+  background: #000;
+}
+
+/* Center Rumi-as-Mima popup */
+.popup-window.rumi-center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 700;
+  width: 260px;
+}
+
+/* ====== LOGIN OVERLAY ====== */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: #016160; /* green "crash" background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+}
+
+.login-window {
+  width: 360px;
+  background: #c0c0c0;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.8);
+  font-family: "MS Sans Serif", "Tahoma", system-ui;
+  font-size: 14px;
+}
+
+.login-title-bar {
+  background: #000080;
+  color: #ffffff;
+  padding: 4px 8px;
+  font-weight: bold;
+}
+
+.login-body {
+  padding: 18px 20px 16px;
+}
+
+.login-row {
+  margin-bottom: 12px;
+}
+
+.login-row label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.login-row input {
+  width: 100%;
+  padding: 4px;
+  border: 2px inset #ffffff;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.login-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 16px 12px;
+}
+
+#login-btn {
+  padding: 4px 18px;
+  background: #c0c0c0;
+  border: 2px outset #ffffff;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+#login-btn:active {
+  border-style: inset;
+}
+
+

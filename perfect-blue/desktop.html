@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfect Blue Desktop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="screen">
+    <!-- Top bar like a 90s OS -->
+    <div class="top-bar">
+      <div class="top-bar-left">Perfect OS 97</div>
+      <div class="top-bar-right">User: **m*</div>
+    </div>
+
+    <!-- Desktop icons -->
+    <div class="desktop">
+      <!-- FOLDER ICON -->
+      <div class="icon" data-window="folder-window">
+        <div class="icon-image folder-icon">
+          <img src="images/folder.png"
+               alt="Folder icon"
+               style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="icon-label">Folder</div>
+      </div>
+
+      <!-- INBOX ICON -->
+      <div class="icon" data-window="inbox-window">
+        <div class="icon-image inbox-icon">
+          <img src="images/inbox.jpg"
+               alt="Inbox icon"
+               style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="icon-label">Inbox</div>
+      </div>
+
+      <!-- NEWS ICON -->
+      <div class="icon" data-window="news-window">
+        <div class="icon-image news-icon">
+          <img src="images/news.jpg"
+               alt="News icon"
+               style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="icon-label">News</div>
+      </div>
+
+      <!-- MIMA'S ROOM ICON -->
+      <div class="icon" data-window="mimasroom-window">
+        <div class="mimas-room-icon">
+          <img src="images/blog.jpg"
+               alt="Mima's Room icon"
+               style="width:60%;height:80%;object-fit:cover;display:block;">
+        </div>
+        <div class="icon-label">Mima's Room</div>
+      </div>
+
+      <!-- RECYCLE BIN ICON -->
+      <div class="icon" data-window="recycle-window">
+        <div class="icon-image bin-icon">
+          <img src="images/bin.png"
+               alt="Recycle Bin icon"
+               style="width:50%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="icon-label">Recycle Bin</div>
+      </div>
+    </div>
+
+    <!-- FOLDER WINDOW (image thumbnails like a file browser) -->
+    <div id="folder-window" class="window hidden">
+      <div class="window-header">
+        <span>Folder</span>
+        <button class="window-close">X</button>
+      </div>
+      <div class="window-body folder-body">
+        <div class="folder-toolbar">
+        </div>
+
+        <div class="folder-main">
+          <!-- Optional left sidebar like a file tree -->
+          <div class="folder-sidebar">
+            <div class="folder-sidebar-title">Places</div>
+            <ul class="folder-sidebar-list">
+              <li class="active">Desktop</li>
+            </ul>
+          </div>
+
+          <!-- Thumbnail grid: 35 idol images -->
+          <div class="folder-grid" id="folder-grid">
+            <!-- 1–7 -->
+            <div class="folder-item" data-large="images/mima_cham_01.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_01.jpg" alt="Mima & Cham 01"></div>
+              <div class="folder-name">mima_cham_01.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_02.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_02.jpg" alt="Mima & Cham 02"></div>
+              <div class="folder-name">mima_cham_02.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_03.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_03.jpg" alt="Mima & Cham 03"></div>
+              <div class="folder-name">mima_cham_03.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_04.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_04.jpg" alt="Mima & Cham 04"></div>
+              <div class="folder-name">mima_cham_04.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_05.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_05.jpg" alt="Mima & Cham 05"></div>
+              <div class="folder-name">mima_cham_05.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_06.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_06.jpg" alt="Mima & Cham 06"></div>
+              <div class="folder-name">mima_cham_06.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_07.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_07.jpg" alt="Mima & Cham 07"></div>
+              <div class="folder-name">mima_cham_07.jpg</div>
+            </div>
+
+            <!-- 8–14 -->
+            <div class="folder-item" data-large="images/mima_cham_08.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_08.jpg" alt="Mima & Cham 08"></div>
+              <div class="folder-name">mima_cham_08.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_09.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_09.jpg" alt="Mima & Cham 09"></div>
+              <div class="folder-name">mima_cham_09.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_10.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_10.jpg" alt="Mima & Cham 10"></div>
+              <div class="folder-name">mima_cham_10.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_11.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_11.jpg" alt="Mima & Cham 11"></div>
+              <div class="folder-name">mima_cham_11.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_12.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_12.jpg" alt="Mima & Cham 12"></div>
+              <div class="folder-name">mima_cham_12.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_13.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_13.jpg" alt="Mima & Cham 13"></div>
+              <div class="folder-name">mima_cham_13.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_14.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_14.jpg" alt="Mima & Cham 14"></div>
+              <div class="folder-name">mima_cham_14.jpg</div>
+            </div>
+
+            <!-- 15–21 -->
+            <div class="folder-item" data-large="images/mima_cham_15.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_15.jpg" alt="Mima & Cham 15"></div>
+              <div class="folder-name">mima_cham_15.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_16.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_16.jpg" alt="Mima & Cham 16"></div>
+              <div class="folder-name">mima_cham_16.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_17.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_17.jpg" alt="Mima & Cham 17"></div>
+              <div class="folder-name">mima_cham_17.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_18.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_18.jpg" alt="Mima & Cham 18"></div>
+              <div class="folder-name">mima_cham_18.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_19.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_19.jpg" alt="Mima & Cham 19"></div>
+              <div class="folder-name">mima_cham_19.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_20.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_20.jpg" alt="Mima & Cham 20"></div>
+              <div class="folder-name">mima_cham_20.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_21.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_21.jpg" alt="Mima & Cham 21"></div>
+              <div class="folder-name">mima_cham_21.jpg</div>
+            </div>
+
+            <!-- 22–28 -->
+            <div class="folder-item" data-large="images/mima_cham_22.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_22.jpg" alt="Mima & Cham 22"></div>
+              <div class="folder-name">mima_cham_22.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_23.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_23.jpg" alt="Mima & Cham 23"></div>
+              <div class="folder-name">mima_cham_23.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_24.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_24.jpg" alt="Mima & Cham 24"></div>
+              <div class="folder-name">mima_cham_24.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_25.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_25.jpg" alt="Mima & Cham 25"></div>
+              <div class="folder-name">mima_cham_25.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_26.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_26.jpg" alt="Mima & Cham 26"></div>
+              <div class="folder-name">mima_cham_26.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_27.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_27.jpg" alt="Mima & Cham 27"></div>
+              <div class="folder-name">mima_cham_27.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_28.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_28.jpg" alt="Mima & Cham 28"></div>
+              <div class="folder-name">mima_cham_28.jpg</div>
+            </div>
+
+            <!-- 29–35 -->
+            <div class="folder-item" data-large="images/mima_cham_29.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_29.jpg" alt="Mima & Cham 29"></div>
+              <div class="folder-name">mima_cham_29.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_30.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_30.jpg" alt="Mima & Cham 30"></div>
+              <div class="folder-name">mima_cham_30.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_31.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_31.jpg" alt="Mima & Cham 31"></div>
+              <div class="folder-name">mima_cham_31.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_32.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_32.jpg" alt="Mima & Cham 32"></div>
+              <div class="folder-name">mima_cham_32.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_33.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_33.jpg" alt="Mima & Cham 33"></div>
+              <div class="folder-name">mima_cham_33.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_34.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_34.jpg" alt="Mima & Cham 34"></div>
+              <div class="folder-name">mima_cham_34.jpg</div>
+            </div>
+            <div class="folder-item" data-large="images/mima_cham_35.jpg">
+              <div class="folder-thumb"><img src="images/mima_cham_35.jpg" alt="Mima & Cham 35"></div>
+              <div class="folder-name">mima_cham_35.jpg</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="folder-statusbar">
+          35 items
+        </div>
+      </div>
+    </div>
+
+    <!-- IMAGE PREVIEW POPUP WINDOW -->
+    <div id="image-preview-window" class="window hidden small-window">
+      <div class="window-header">
+        <span>Image Preview</span>
+        <button class="window-close">X</button>
+      </div>
+      <div class="window-body preview-body">
+        <img id="preview-image" src="" alt="Preview" />
+      </div>
+    </div>
+
+    <!-- INBOX WINDOW (90s email client style) -->
+    <div id="inbox-window" class="window hidden">
+      <div class="window-header">
+        <span>Perfect Mail 98 - Inbox</span>
+        <button class="window-close">X</button>
+      </div>
+
+      <div class="inbox-main">
+        <!-- Folder list on the left -->
+        <div class="folder-pane">
+          <div class="folder-title">Folders</div>
+          <ul class="folder-list">
+            <li class="folder-item active">Inbox</li>
+          </ul>
+        </div>
+
+        <!-- Mail list + reading pane -->
+        <div class="mail-pane">
+          <!-- Message list -->
+          <div class="mail-list-header">
+            <span class="ml-from">From</span>
+            <span class="ml-subject">Subject</span>
+            <span class="ml-date">Date</span>
+          </div>
+          <div class="mail-list" id="mail-list">
+            <div class="mail-row" data-id="m1">
+              <span class="ml-from">chamlover2@fans.jp</span>
+              <span class="ml-subject">Please don't leave Mima!</span>
+              <span class="ml-date"></span>
+            </div>
+            <div class="mail-row" data-id="m2">
+              <span class="ml-from">chamforev3r@fans.jp</span>
+              <span class="ml-subject">I love you Mima</span>
+              <span class="ml-date"></span>
+            </div>
+            <div class="mail-row" data-id="m3">
+              <span class="ml-from">me-mania@fanmail.jp</span>
+              <span class="ml-subject">You were perfect tonight</span>
+              <span class="ml-date"></span>
+            </div>
+            <div class="mail-row" data-id="m4">
+              <span class="ml-from">me-mania@fanmail.jp</span>
+              <span class="ml-subject">The real Mima</span>
+              <span class="ml-date"></span>
+            </div>
+            <!-- m5, m6, m7, m8 added by script.js as story progresses -->
+          </div>
+
+          <!-- Reading pane -->
+          <div class="mail-reading-pane">
+            <div class="reading-header">
+              <div><strong>From:</strong> <span id="read-from"></span></div>
+              <div><strong>To:</strong> mima@real.jp</div>
+              <div><strong>Subject:</strong> <span id="read-subject"></span></div>
+            </div>
+            <div class="reading-body" id="read-body">
+              <!-- JS fills this with the selected email -->
+            </div>
+          </div>
+
+          <!-- Reply area -->
+          <div class="email-compose hidden" id="reply-section">
+            <div class="email-meta">Reply to: <span id="reply-to-label">me-mania@fanmail.jp</span></div>
+            <textarea id="reply-text" readonly></textarea>
+            <button id="send-reply-btn">Send Email</button>
+            <div id="send-status" class="status-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEWS WINDOW (90s BBC-style front page) -->
+    <div id="news-window" class="window hidden">
+      <div class="window-header">
+        <span>PBN Online</span>
+        <button class="window-close">X</button>
+      </div>
+      <div class="window-body news-body">
+        <!-- "BBC-style" header bar -->
+        <div class="news-topbar">
+          <div class="news-logo">PBN</div>
+          <div class="news-tagline">Japan's Daily News</div>
+        </div>
+
+        <div class="news-layout">
+          <!-- Left navigation column -->
+          <nav class="news-nav">
+            <h3>Front Page</h3>
+          </nav>
+
+          <!-- Center headline list -->
+          <main class="news-main">
+            <h1 class="news-front-title">Front Page</h1>
+
+            <div class="headline-list" id="news-list">
+              <article class="headline-card" data-article="a1">
+                <h2>Mima departs CHAM</h2>
+                <p class="headline-sub">
+                  Idol Mima Kirigoe leaves pop trio CHAM to pursue acting career.
+                </p>
+              </article>
+
+              <article class="headline-card" data-article="a2">
+                <h2>Mima joins TV drama "Double Bind"</h2>
+                <p class="headline-sub">
+                  Former idol takes on darker role in late-night psychological thriller.
+                </p>
+              </article>
+
+              <article class="headline-card" data-article="a3">
+                <h2>Scenes of Mima in "Double Bind" disturb viewers!</h2>
+                <p class="headline-sub">
+                  Ratings soar as fans from her idol days react with outrage to shocking scenes.
+                </p>
+              </article>
+              <!-- a4, a5, a6 will be appended via script.js -->
+            </div>
+          </main>
+
+          <!-- Right article / sidebar column -->
+          <aside class="news-article-pane">
+            <div id="news-article-display" class="news-article-display">
+              <h2>Top Story</h2>
+              <p>Select a headline on the left to read the full article.</p>
+            </div>
+
+            <div id="news-end-message" class="end-message hidden">
+              The front page keeps updating, but the real story is unfolding on this desktop.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <!-- MIMA'S ROOM WINDOW -->
+    <div id="mimasroom-window" class="window hidden">
+      <div class="window-header">
+        <span>Mima's Room</span>
+        <button class="window-close">X</button>
+      </div>
+
+      <div class="window-body scrollable mimasroom-body">
+        <div class="mimasroom-inner">
+
+          <!-- Welcome poster frame at the very top -->
+          <div class="mima-welcome">
+            <div class="mima-welcome-frame">
+              <!-- replace src with your screenshot of "Welcome to Mima's Room" -->
+              <img src="images/blogimage.jpg" alt="Welcome to Mima's Room">
+            </div>
+          </div>
+
+          <!-- Diary title -->
+          <h1 class="mima-title">Mima's Diary</h1>
+
+          <!-- Diary entries -->
+          <div id="mima-posts" class="mima-posts">
+            <article class="mima-post mima-entry">
+              <h2 class="mima-date">April 17</h2>
+              <p class="mima-text">
+                It was just terrible! I screwed up the choreography, AND forgot my lyrics. I feel so sorry to all my fans!
+              </p>
+            </article>
+
+            <article class="mima-post mima-entry">
+              <h2 class="mima-date">April 18</h2>
+              <p class="mima-text">
+                This morning, when I got off the train left foot first, was when all the bad stuff started. I always make it a point that my right foot goes first into the train and into the bath.
+              </p>
+            </article>
+
+            <article class="mima-post mima-entry">
+              <h2 class="mima-date">April 19</h2>
+              <p class="mima-text">
+                Today was my 21st birthday. Yukiko, Rei, and the staff at the agency held a party for me. It was terrific! Coming home, I went grocery shopping at the usual store. I got mineral water and milk. The milk just has to be Cow Brand Milk. I have to allow myself at least this much luxury. And food for my precious fish, of course.
+              </p>
+            </article>
+
+            <!-- Polaroid-style image on the right-->
+            <div class="mima-photo-wrapper">
+              <div class="mima-photo-frame">
+                <img src="images/mima_cham_25.jpg" alt="Mima diary photo">
+              </div>
+            </div>
+
+            <article class="mima-post mima-entry">
+              <h2 class="mima-date">May 12</h2>
+              <p class="mima-text">
+                I was impressed with Eri Ochiai's performance in Double Bind. She's another person when the camera is rolling. I hope to one day be as good an actress as she is!
+              </p>
+            </article>
+
+            <article class="mima-post mima-entry">
+              <h2 class="mima-date">June 19</h2>
+              <p class="mima-text">
+                I don't want to do that drama anymore! The producer is a total pervert, and my role is really screwed up! Singing in front of my fans has GOT to be the best for me after all!
+              </p>
+            </article>
+
+            <article class="mima-post mima-entry">
+              <h2 class="mima-date">June 22</h2>
+              <p class="mima-text">
+                Today, I was still a little depressed, but receiving e-mail from all of you made me feel a little better.
+              </p>
+            </article>
+          </div>
+
+          <!-- New entry / prewritten post -->
+          <section class="mima-new-entry">
+            <h2 class="mima-new-title">Make a new entry</h2>
+
+            <textarea id="mima-new-post" readonly>
+Help me, everyone. Everyone is forcing me to do it! It's all the screenwriter's fault! Help! Help! 助けて！ Help. Help. Help. 助けて！ 助けて！ Help! Help. Help! Help! 助けて！ 助けて！ 助けて! Help. Help. 助けて！ Help. Help. Help. 助けて！ 助けて！ Help! Help. Help! Help! 助けて！ 助けて！ 助けて！ Help. Help. 助けて！ Help. Help. Help. 助けて！ 助けて！ Help! Help. Help! Help! 助けて！ 助けて！ 助けて！ Help. Help. 助けて！ Help. Help. Help. 助けて！ 助けて！ Help! Help. Help! Help! 助けて！ 助けて！ 助けて！ He̸lp͠.̕ ͏͟͝Hę̴l͏̸p̸.̡͞҉ ҉助̀͟け̴͞て̸̨！̵ ̧҉H̴e̷͡l̵̀͟p̴. ̸͠Ḩ̡e̕l̡͢p̀. ̧He̴̷̕lp̴͝. ̵̛͞助̧̀͢け̛͢て̴̕！
+            </textarea>
+            <button id="mima-post-btn">Post to Mima's Room</button>
+            <div id="mima-post-status" class="status-text"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECYCLE BIN WINDOW -->
+    <div id="recycle-window" class="window hidden">
+      <div class="window-header">
+        <span>Recycle Bin</span>
+        <button class="window-close">X</button>
+      </div>
+      <div class="window-body scrollable">
+        <h2>Deleted Items</h2>
+        <div class="recycle-grid">
+          <div class="deleted-item" data-large="images/double-bind.jpg">
+            <div class="deleted-thumb">
+              <img src="images/double-bind.jpg" alt="Double Bind Threat">
+            </div>
+            <div class="deleted-label">DOUBLE BIND</div>
+          </div>
+
+          <div class="deleted-item" data-large="images/traitor.jpg">
+            <div class="deleted-thumb">
+              <img src="images/traitor.jpg" alt="Traitor">
+            </div>
+            <div class="deleted-label">TRAITOR</div>
+          </div>
+
+          <div class="deleted-item" data-large="images/diagnosis-assessment.jpg">
+            <div class="deleted-thumb">
+              <img src="images/diagnosis-assessment.jpg" alt="Diagnosis Assessment">
+            </div>
+            <div class="deleted-label">Diagnosis Assessment</div>
+          </div>
+
+          <div class="deleted-item deleted-red" data-large="images/idol.jpg">
+            <div class="deleted-thumb">
+              <img src="images/idol.jpg" alt="Idol">
+            </div>
+            <div class="deleted-label">???</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- "Are you Mima?" FINAL POPUP TEMPLATE (used as hidden template) -->
+    <div id="identity-popup" class="window small-window hidden identity-popup">
+      <div class="window-header">
+        <span>System Message</span>
+      </div>
+      <div class="window-body identity-body">
+        <p class="glitch-text">A&nbsp;r&nbsp;e&nbsp;&nbsp;y&nbsp;o&nbsp;u&nbsp;&nbsp;M&nbsp;i&nbsp;m&nbsp;a&nbsp;?</p>
+        <div class="identity-buttons">
+          <button class="identity-yes">YES</button>
+          <button class="identity-yes">YES</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
