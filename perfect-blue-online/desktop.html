@@ -67,6 +67,18 @@
       </div>
     </div>
 
+      <!-- MUSIC ICON (bottom-right) -->
+      <div class="icon music-icon" data-window="music-window">
+        <div class="icon-image music-icon-img">
+          <img src="images/disk.jpg"
+               alt="Music icon"
+               style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="icon-label">Music</div>
+      </div>
+
+
+
     <!-- FOLDER WINDOW (image thumbnails like a file browser) -->
     <div id="folder-window" class="window hidden">
       <div class="window-header">
@@ -380,7 +392,7 @@
           <aside class="news-article-pane">
             <div id="news-article-display" class="news-article-display">
               <h2>Top Story</h2>
-              <p>Select a headline on the left to read the full article.</p>
+              <p>Welcome to PBN! Click to read all the hottest topics of Japan!</p>
             </div>
 
             <div id="news-end-message" class="end-message hidden">
@@ -405,7 +417,7 @@
           <div class="mima-welcome">
             <div class="mima-welcome-frame">
               <!-- replace src with your screenshot of "Welcome to Mima's Room" -->
-              <img src="images/blogimage.jpg" alt="Welcome to Mima's Room">
+              <img src="images/ blogimage.jpg" alt="Welcome to Mima's Room">
             </div>
           </div>
 
@@ -517,6 +529,34 @@ Help me, everyone. Everyone is forcing me to do it! It's all the screenwriter's 
         </div>
       </div>
     </div>
+
+<!-- MUSIC PLAYER WINDOW -->
+<div id="music-window" class="window hidden">
+  <div class="window-header">
+    <span>Music Player</span>
+    <button class="window-close">X</button>
+  </div>
+  <div class="window-body music-body">
+
+    <div class="music-grid">
+      <div class="music-track" data-track="song1">
+        <img src="images/albumcover.png" alt="Angel of Love">
+        <div class="music-label">Angel of Love</div>
+      </div>
+
+      <div class="music-track" data-track="song2">
+        <img src="images/albumcover.png" alt="Alone yet Calm">
+        <div class="music-label">Alone yet Calm</div>
+      </div>
+
+      <div class="music-track" data-track="song3">
+        <img src="images/albumcover.png" alt="Now Embraced by One's Memories">
+        <div class="music-label">Now Embraced by One's Memories</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!-- "Are you Mima?" FINAL POPUP TEMPLATE (used as hidden template) -->
     <div id="identity-popup" class="window small-window hidden identity-popup">

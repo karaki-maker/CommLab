@@ -15,6 +15,63 @@ let identityReplySent = false;
 // which mail is open
 let currentMailId = null;
 
+// ================== MUSIC PLAYER STATE ==================
+// 3 visible tracks in the UI
+let currentTrack = null;
+
+const audioMap = {
+  song1: new Audio('audio/nowembraced.mp3'),
+  song2: new Audio('audio/aloneyetcalm.mp3'),
+  song3: new Audio('audio/angeloflove.mp3')
+};
+
+// hidden nightmare track – NO visible tape/icon
+const nightmareAudio = new Audio('audio/nightmare.mp3');
+
+function stopAllMusic() {
+  // stop visible tracks + nightmare
+  const allAudios = [...Object.values(audioMap), nightmareAudio];
+  allAudios.forEach(a => {
+    a.pause();
+    a.currentTime = 0;
+  });
+
+  currentTrack = null;
+
+  document.querySelectorAll('.music-track.active').forEach(el =>
+    el.classList.remove('active')
+  );
+}
+
+function toggleTrack(id) {
+  const audio = audioMap[id];
+  if (!audio) return;
+
+  const trackEl = document.querySelector(`.music-track[data-track="${id}"]`);
+
+  // if this track is already playing -> stop it
+  if (currentTrack === id && !audio.paused) {
+    audio.pause();
+    audio.currentTime = 0;
+    currentTrack = null;
+    if (trackEl) trackEl.classList.remove('active');
+    return;
+  }
+
+  // otherwise stop everything (including nightmare) and start this one
+  stopAllMusic();
+  audio.play();
+  currentTrack = id;
+  if (trackEl) trackEl.classList.add('active');
+}
+
+// play nightmare.mp3 in the background (no visible tape)
+function playNightmare() {
+  stopAllMusic();          // kills any song + resets UI highlight
+  nightmareAudio.loop = true;
+  nightmareAudio.play();
+}
+
 // ================== WINDOW + ICON MANAGEMENT ==================
 function bringToFront(win) {
   zCounter += 1;
@@ -256,7 +313,7 @@ function addNewMeManiaEmail() {
   row.innerHTML = `
     <span class="ml-from">me-mania@fanmail.jp</span>
     <span class="ml-subject">That girl on TV isn't you, right?</span>
-    <span class="ml-date">03/18</span>
+    <span class="ml-date"></span>
   `;
   mailList.appendChild(row);
 
@@ -280,7 +337,7 @@ function addMeManiaFirstReply() {
   row.innerHTML = `
     <span class="ml-from">me-mania@fanmail.jp</span>
     <span class="ml-subject">I'll take care of it.</span>
-    <span class="ml-date">03/18</span>
+    <span class="ml-date"></span>
   `;
   mailList.appendChild(row);
   row.addEventListener('click', () => displayEmail('m6'));
@@ -304,7 +361,7 @@ function addMeManiaPhotoshootEmail() {
   row.innerHTML = `
     <span class="ml-from">me-mania@fanmail.jp</span>
     <span class="ml-subject">I'll keep your image pure</span>
-    <span class="ml-date">03/20</span>
+    <span class="ml-date"></span>
   `;
   mailList.appendChild(row);
   row.addEventListener('click', () => displayEmail('m7'));
@@ -328,7 +385,7 @@ function addFinalIdentityMail() {
   row.innerHTML = `
     <span class="ml-from">mimakirigoe@mima-room.jp</span>
     <span class="ml-subject">who are you?</span>
-    <span class="ml-date">03/21</span>
+    <span class="ml-date"></span>
   `;
   mailList.appendChild(row);
   row.addEventListener('click', () => displayEmail('m8'));
@@ -338,6 +395,9 @@ function addFinalIdentityMail() {
 
   // highlight Inbox icon
   highlightIconForWindow('inbox-window');
+
+  // 🔊 stop any current music and start hidden nightmare.mp3
+  playNightmare();
 }
 
 // reply send logic (context based on currentMailId)
@@ -354,7 +414,7 @@ if (sendBtn) {
         sentRow.innerHTML = `
           <span class="ml-from">mima@idol.jp</span>
           <span class="ml-subject">Re: That girl on TV isn't you, right?</span>
-          <span class="ml-date">03/18</span>
+          <span class="ml-date"></span>
         `;
         mailList.appendChild(sentRow);
       }
@@ -408,40 +468,47 @@ const newsArticles = {
     body:
       "Former pop idol Mima Kirigoe has officially left the pop trio CHAM. " +
       "Her management announced that she will be focusing on an acting career, " +
-      "leaving fans divided between excitement and concern."
+      "leaving fans divided between excitement and concern.",
+    image: 'images/news_mima_departs.jpg'
   },
   a2: {
     title: 'Mima joins TV drama "Double Bind"',
     body:
       "Mima Kirigoe has joined the cast of late-night psychological drama \"Double Bind\". " +
-      "The series, known for its unsettling twists, marks a dramatic shift from her bright idol image."
+      "The series, known for its unsettling twists, marks a dramatic shift from her bright idol image.",
+    image: 'images/news_double_bind.jpg'
   },
   a3: {
     title: 'Scenes of Mima in "Double Bind" disturb viewers!',
     body:
       "Graphic and unsettling scenes featuring Mima’s character have shocked late-night audiences. " +
-      "Ratings continue to climb, but fans from her idol days voice outrage, claiming the role is 'not the real Mima'."
+      "Ratings continue to climb, but fans from her idol days voice outrage, claiming the role is 'not the real Mima'.",
+    image: 'images/news_double_bind_scenes.jpg'
   },
   a4: {
     title: 'Director of "Double Bind" murdered',
     body:
       "Takahashi, director of the cult series \"Double Bind\", was found dead in what investigators " +
       "have described as a brutal attack. Police are exploring possible connections to recent threats " +
-      "sent to the show and its cast."
+      "sent to the show and its cast.",
+    image: 'images/news_director_murdered.jpg'
   },
   a5: {
     title: 'Mima shocks fans with promiscuous photoshoot post actress debut',
     body:
       "New photos released from a controversial photoshoot show former idol Mima Kirigoe in provocative poses. " +
-      "Fans are divided between support for her acting career and anger over what they see as a betrayal of her 'pure' image."
+      "Fans are divided between support for her acting career and anger over what they see as a betrayal of her 'pure' image.",
+    image: 'images/news_photoshoot.jpg'
   },
   a6: {
     title: 'Famous celebrity photographer murdered',
     body:
       "A celebrity photographer known for pushing young stars into provocative shoots has been found murdered " +
-      "in his studio. Authorities note eerie parallels to other recent deaths surrounding actress Mima Kirigoe."
+      "in his studio. Authorities note eerie parallels to other recent deaths surrounding actress Mima Kirigoe.",
+    image: 'images/news_photographer_murdered.jpg'
   }
 };
+
 
 // handle clicks on headlines
 function handleHeadlineClick(card) {
@@ -449,10 +516,21 @@ function handleHeadlineClick(card) {
   const article = newsArticles[key];
   if (!article || !newsArticleDisplay) return;
 
-  newsArticleDisplay.innerHTML = `
-    <h2>${article.title}</h2>
-    <p>${article.body}</p>
-  `;
+  let html = `<h2>${article.title}</h2>`;
+
+  // If an image is defined, show it
+  if (article.image) {
+    html += `
+      <div class="news-article-image-wrapper">
+        <img src="${article.image}" alt="${article.title}">
+      </div>
+    `;
+  }
+
+  html += `<p>${article.body}</p>`;
+
+  newsArticleDisplay.innerHTML = html;
+
 
   // After photoshoot article (a5) is read, add Me-Mania "pure image" mail
   if (key === 'a5' && !photoMailAdded) {
@@ -648,7 +726,7 @@ function showIdentityPopup() {
     screen.appendChild(clone);
     bringToFront(clone);
 
-    // YES buttons on each popup -> ending.html
+    // YES buttons on each popup -> ending.html (or your link)
     clone.querySelectorAll('.identity-yes').forEach(btn => {
       btn.addEventListener('click', () => {
         window.location.href = 'https://www.youtube.com/watch?v=H10FZubVQzg';
@@ -656,6 +734,15 @@ function showIdentityPopup() {
     });
   }
 }
+
+// ================== MUSIC TRACK CLICK HANDLERS ==================
+document.querySelectorAll('.music-track').forEach(track => {
+  track.addEventListener('click', () => {
+    const id = track.dataset.track;
+    toggleTrack(id);
+  });
+});
+
 
 
 

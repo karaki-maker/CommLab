@@ -23,7 +23,7 @@ img {
 
 /* ====== MAIN FRAME (pink checkered background) ====== */
 #page-wrapper {
-  max-width: 1100px;
+  max-width: 1200px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 32px 48px 80px;
@@ -60,6 +60,23 @@ img {
 .diary {
   max-width: 720px;
   margin: 0 auto;
+}
+
+.diary-hero {
+  width: 100%;
+  margin: 40px 0 20px; /* space above + below */
+  display: flex;
+  justify-content: center;
+}
+
+.diary-hero img {
+  max-width: 700px;   /* adjust size as you like */
+  width: 90%;         /* responsive on small screens */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 6px solid white;          /* optional: polaroid style */
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.25); 
 }
 
 /* ====== DIARY TITLE ====== */
@@ -234,4 +251,20 @@ img {
   border-style: inset;
 }
 
+/* Center images inside diary entries, but NOT the text */
+.diary .polaroid-row {
+  display: flex;
+  justify-content: center;   /* centers the images */
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
+.diary .polaroid {
+  text-align: center;        /* centers captions only */
+}
+
+.diary .polaroid img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;        /* centers the actual image */
+}
