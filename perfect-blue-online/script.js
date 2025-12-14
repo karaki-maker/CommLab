@@ -1,7 +1,7 @@
-// ================== GLOBAL STATE ==================
+
 let zCounter = 10;
 
-// story flags
+
 let mimaPosted = false;
 let emailReplySent = false;
 let firstMeMailAdded = false;
@@ -15,8 +15,8 @@ let identityReplySent = false;
 // which mail is open
 let currentMailId = null;
 
-// ================== MUSIC PLAYER STATE ==================
-// 3 visible tracks in the UI
+// MUSIC PLAYER 
+// 3 tracks
 let currentTrack = null;
 
 const audioMap = {
@@ -65,14 +65,14 @@ function toggleTrack(id) {
   if (trackEl) trackEl.classList.add('active');
 }
 
-// play nightmare.mp3 in the background (no visible tape)
+// play nightmare.mp3 in the background 
 function playNightmare() {
-  stopAllMusic();          // kills any song + resets UI highlight
+  stopAllMusic();          // kills any song 
   nightmareAudio.loop = true;
   nightmareAudio.play();
 }
 
-// ================== WINDOW + ICON MANAGEMENT ==================
+// WINDOW + ICON MANAGEMENT 
 function bringToFront(win) {
   zCounter += 1;
   win.style.zIndex = zCounter;
@@ -91,7 +91,7 @@ function closeWindow(button) {
   win.classList.add('hidden');
 }
 
-// highlight desktop icon for a window (glow)
+// highlight desktop icon for a window 
 function highlightIconForWindow(windowId) {
   const icon = document.querySelector(`.icon[data-window="${windowId}"]`);
   if (icon) {
@@ -118,7 +118,7 @@ document.querySelectorAll('.window').forEach(win => {
   win.addEventListener('mousedown', () => bringToFront(win));
 });
 
-// ESC closes all windows
+// esc closes all windows
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     document.querySelectorAll('.window').forEach(win => {
@@ -127,7 +127,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ================== IMAGE PREVIEW (FOLDER + RECYCLE) ==================
+// IMAGE PREVIEW (FOLDER + RECYCLE) 
 
 const previewWindow = document.getElementById('image-preview-window');
 const previewImg = document.getElementById('preview-image');
@@ -135,10 +135,8 @@ const previewImg = document.getElementById('preview-image');
 function openPreviewFromItem(item) {
   if (!previewImg || !item) return;
 
-  // 1) try data-large
   let src = item.dataset.large;
 
-  // 2) fallback to the thumbnail img src
   if (!src || src.trim() === '') {
     const imgEl = item.querySelector('img');
     if (imgEl) src = imgEl.getAttribute('src');
@@ -157,12 +155,12 @@ document.querySelectorAll('.folder-item').forEach(item => {
   });
 });
 
-// recycle bin items (images)
+// recycle bin items 
 document.querySelectorAll('.deleted-item').forEach(item => {
   item.addEventListener('click', () => {
     openPreviewFromItem(item);
 
-    // if it's the red dress, ramp the horror + show popup(s)
+    // if it's the red dress, ramp the horror + show popups
     if (item.classList.contains('deleted-red')) {
       startScreenShake();
       setTimeout(showIdentityPopup, 1500);
@@ -170,9 +168,9 @@ document.querySelectorAll('.deleted-item').forEach(item => {
   });
 });
 
-// ================== INBOX / MAIL CLIENT =====================
+// INBOX / MAIL 
 
-// Email contents data
+// Email content 
 const emailData = {
   m1: {
     from: 'chamlover2@fans.jp',
@@ -202,7 +200,7 @@ const emailData = {
       "Mima,\n\nI saw the rumors online. Don't worry. I know the truth.\n" +
       "I know which one is really you.\n\n- Me-Mania"
   },
-  // appears AFTER you post in Mima's Room
+  // appears AFTER post in Mima's Room
   m5: {
     from: 'me-mania@fanmail.jp',
     subject: "That girl on TV isn't you, right?",
@@ -212,7 +210,7 @@ const emailData = {
       "That wasn’t you on the TV, right…? That’s an imposter.\n\n" +
       "Please tell me I'm right.\n\n- Me-Mania"
   },
-  // reply after your prewritten message: "I'll take care of it."
+  // reply after prewritten message: "I'll take care of it."
   m6: {
     from: 'me-mania@fanmail.jp',
     subject: "I'll take care of it.",
@@ -258,17 +256,15 @@ function displayEmail(id) {
   if (readSubjectEl) readSubjectEl.textContent = data.subject;
   if (readBodyEl) readBodyEl.textContent = data.body;
 
-  // visual selection
   document.querySelectorAll('.mail-row').forEach(row =>
     row.classList.remove('selected')
   );
   const activeRow = document.querySelector(`.mail-row[data-id="${id}"]`);
   if (activeRow) activeRow.classList.add('selected');
 
-  // Default: hide reply box
   replySection.classList.add('hidden');
 
-  // When the new Me-Mania TV email appears (m5), allow reply with your prewritten text
+  // When the new Me-Mania TV email appears (m5), allow reply 
   if (id === 'm5') {
     replySection.classList.remove('hidden');
     replyToLabel.textContent = emailData[id].from;
@@ -277,7 +273,7 @@ function displayEmail(id) {
 `You believe me right? She’s an imposter! It’s not me! I trust you, Mr. ME-MANIA. I’ll always be with you and I’ll never change! Not a bit! But I have a problem… It’s that imposter. She keeps getting in my way! I don’t know what to do… You’re the only one I can depend on…`;
   }
 
-  // Final email: mimic identity breakdown reply
+  // Final email: mimic identity breakdown reply 
   if (id === 'm8') {
     replySection.classList.remove('hidden');
     replyToLabel.textContent = emailData[id].from;
@@ -291,7 +287,7 @@ function displayEmail(id) {
   }
 }
 
-// initial selection (just some innocent fan mail)
+// initial selection (just some innocent fan mail ^.^)
 displayEmail('m3');
 
 // click rows
@@ -301,7 +297,6 @@ mailRows.forEach(row => {
   });
 });
 
-// add Me-Mania "TV imposter" email AFTER posting in Mima's Room
 function addNewMeManiaEmail() {
   if (firstMeMailAdded) return;
   const mailList = document.getElementById('mail-list');
@@ -321,11 +316,9 @@ function addNewMeManiaEmail() {
 
   firstMeMailAdded = true;
 
-  // highlight Inbox icon instead of auto-opening
   highlightIconForWindow('inbox-window');
 }
 
-// Me-Mania reply: "I'll take care of it."
 function addMeManiaFirstReply() {
   if (firstMeReplyAdded) return;
   const mailList = document.getElementById('mail-list');
@@ -373,7 +366,6 @@ function addMeManiaPhotoshootEmail() {
   highlightIconForWindow('inbox-window');
 }
 
-// Final "who are you?" email
 function addFinalIdentityMail() {
   if (finalMailAdded) return;
   const mailList = document.getElementById('mail-list');
@@ -400,7 +392,6 @@ function addFinalIdentityMail() {
   playNightmare();
 }
 
-// reply send logic (context based on currentMailId)
 if (sendBtn) {
   sendBtn.addEventListener('click', () => {
     if (!currentMailId) return;
@@ -428,9 +419,9 @@ if (sendBtn) {
       if (replyText) replyText.value = '';
       if (replySection) replySection.classList.add('hidden');
 
-      // Me-Mania: "I'll take care of it."
+      
       setTimeout(addMeManiaFirstReply, 2000);
-      // after that, news updates with director murder + photoshoot
+      
       setTimeout(addDynamicNewsAfterEmail, 3500);
 
       checkForEnding();
@@ -456,7 +447,7 @@ if (sendBtn) {
   });
 }
 
-// ================== NEWS / FRONT PAGE =======================
+// NEWS / FRONT PAGE
 
 const newsArticleDisplay = document.getElementById('news-article-display');
 const newsBodyContainer = document.querySelector('.news-main');
@@ -510,7 +501,7 @@ const newsArticles = {
 };
 
 
-// handle clicks on headlines
+// clicks on headlines
 function handleHeadlineClick(card) {
   const key = card.dataset.article;
   const article = newsArticles[key];
@@ -518,7 +509,7 @@ function handleHeadlineClick(card) {
 
   let html = `<h2>${article.title}</h2>`;
 
-  // If an image is defined, show it
+  // news images
   if (article.image) {
     html += `
       <div class="news-article-image-wrapper">
@@ -532,12 +523,12 @@ function handleHeadlineClick(card) {
   newsArticleDisplay.innerHTML = html;
 
 
-  // After photoshoot article (a5) is read, add Me-Mania "pure image" mail
+  // After photoshoot article (a5) is read add Me-Mania mail
   if (key === 'a5' && !photoMailAdded) {
     setTimeout(addMeManiaPhotoshootEmail, 1200);
   }
 
-  // After photographer murder article (a6) is read, add final identity mail
+  // After photographer murder article (a6) is read add final identity mail
   if (key === 'a6' && !finalMailAdded) {
     setTimeout(addFinalIdentityMail, 1500);
   }
@@ -547,7 +538,7 @@ document.querySelectorAll('.headline-card').forEach(card => {
   card.addEventListener('click', () => handleHeadlineClick(card));
 });
 
-// Add dynamic news after first Me-Mania reply
+// Add news after first Me-Mania reply
 function addDynamicNewsAfterEmail() {
   if (newsAfterFirstReplyAdded) return;
   const list = document.getElementById('news-list');
@@ -581,7 +572,7 @@ function addDynamicNewsAfterEmail() {
 
   newsAfterFirstReplyAdded = true;
 
-  // highlight NEWS icon instead of auto-opening
+  // highlight News icon 
   highlightIconForWindow('news-window');
 }
 
@@ -605,7 +596,7 @@ function addPhotographerMurderNews() {
 
   photographerHeadlineAdded = true;
 
-  // highlight NEWS icon instead of auto-opening
+  // highlight News icon 
   highlightIconForWindow('news-window');
 }
 
@@ -619,7 +610,7 @@ if (newsBodyContainer && newsEndMessage) {
   });
 }
 
-// ================== MIMA'S ROOM =============================
+// Mima's Room 
 
 const mimaPostBtn = document.getElementById('mima-post-btn');
 const mimaNewPost = document.getElementById('mima-new-post');
@@ -655,13 +646,13 @@ if (mimaPostBtn) {
       mimaNewPost.value = '';
     }
 
-    // Trigger new Me-Mania email
+    // trigger new Me-Mania email
     addNewMeManiaEmail();
     checkForEnding();
   });
 }
 
-// ================== SOFT ENDING / USERNAME HINT =============================
+// Username Shake 
 
 function checkForEnding() {
   if (emailReplySent && mimaPosted) {
@@ -678,7 +669,7 @@ function checkForEnding() {
   }
 }
 
-// ================== SHAKE + "ARE YOU MIMA?" POPUPS =============================
+// SHAKE + "A R E Y O U M I M A?" POPUPS
 
 function startScreenShake() {
   const screen = document.querySelector('.screen');
@@ -694,7 +685,7 @@ function highlightRecycleBin() {
   }
 }
 
-// spawn MANY "Are you Mima?" windows randomly over the screen
+// spawn MANY "A r e y o u M i m a?" windows randomly over the screen
 function showIdentityPopup() {
   const template = document.getElementById('identity-popup');
   const screen = document.querySelector('.screen');
@@ -726,7 +717,7 @@ function showIdentityPopup() {
     screen.appendChild(clone);
     bringToFront(clone);
 
-    // YES buttons on each popup -> ending.html (or your link)
+    // YES buttons on each popup 
     clone.querySelectorAll('.identity-yes').forEach(btn => {
       btn.addEventListener('click', () => {
         window.location.href = 'https://www.youtube.com/watch?v=H10FZubVQzg';
@@ -735,7 +726,7 @@ function showIdentityPopup() {
   }
 }
 
-// ================== MUSIC TRACK CLICK HANDLERS ==================
+// MUSIC TRACK CLICK HANDLER
 document.querySelectorAll('.music-track').forEach(track => {
   track.addEventListener('click', () => {
     const id = track.dataset.track;
